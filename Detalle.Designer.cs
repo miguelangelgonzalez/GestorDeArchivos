@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVigencia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAbrirArch = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -59,13 +59,13 @@
             this.txtDocumento.Size = new System.Drawing.Size(242, 20);
             this.txtDocumento.TabIndex = 1;
             // 
-            // textBox1
+            // txtTipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(113, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtTipo.Location = new System.Drawing.Point(62, 58);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.ReadOnly = true;
+            this.txtTipo.Size = new System.Drawing.Size(113, 20);
+            this.txtTipo.TabIndex = 3;
             // 
             // label2
             // 
@@ -76,13 +76,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo";
             // 
-            // textBox2
+            // txtVigencia
             // 
-            this.textBox2.Location = new System.Drawing.Point(244, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtVigencia.Location = new System.Drawing.Point(244, 58);
+            this.txtVigencia.Name = "txtVigencia";
+            this.txtVigencia.ReadOnly = true;
+            this.txtVigencia.Size = new System.Drawing.Size(131, 20);
+            this.txtVigencia.TabIndex = 5;
             // 
             // label3
             // 
@@ -102,21 +102,21 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Descripcion";
             // 
-            // textBox3
+            // txtDesc
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 128);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(360, 71);
-            this.textBox3.TabIndex = 7;
+            this.txtDesc.Location = new System.Drawing.Point(15, 128);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(360, 71);
+            this.txtDesc.TabIndex = 7;
             // 
-            // textBox4
+            // txtEstado
             // 
-            this.textBox4.Location = new System.Drawing.Point(133, 220);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(113, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtEstado.Location = new System.Drawing.Point(133, 220);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(242, 20);
+            this.txtEstado.TabIndex = 9;
             // 
             // label5
             // 
@@ -127,14 +127,15 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Estado del documento";
             // 
-            // button1
+            // btnAbrirArch
             // 
-            this.button1.Location = new System.Drawing.Point(15, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Abrir documento";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAbrirArch.Location = new System.Drawing.Point(15, 264);
+            this.btnAbrirArch.Name = "btnAbrirArch";
+            this.btnAbrirArch.Size = new System.Drawing.Size(122, 23);
+            this.btnAbrirArch.TabIndex = 10;
+            this.btnAbrirArch.Text = "Abrir documento";
+            this.btnAbrirArch.UseVisualStyleBackColor = true;
+            this.btnAbrirArch.Click += new System.EventHandler(this.btnAbrirArch_Click);
             // 
             // button2
             // 
@@ -144,6 +145,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Cerrar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Detalle
             // 
@@ -151,19 +153,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 299);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btnAbrirArch);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtVigencia);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label1);
             this.Name = "Detalle";
             this.Text = "Detalle";
+            this.Load += new System.EventHandler(this.Detalle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,15 +176,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDocumento;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVigencia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAbrirArch;
         private System.Windows.Forms.Button button2;
     }
 }

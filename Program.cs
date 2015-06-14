@@ -17,13 +17,25 @@ namespace GestorDeArchivos
         };
 
         public static DocStore DocStore { get; set; }
-            /// <summary>
+
+        public static string DirGestor
+        {
+            get { return string.Concat(AppDomain.CurrentDomain.BaseDirectory, "raiz"); }
+        }
+
+        public static string DirFileServer
+        {
+            get { return string.Concat(AppDomain.CurrentDomain.BaseDirectory, "FILESERVER"); }
+        }
+
+        /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
             DocStore = new DocStore();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

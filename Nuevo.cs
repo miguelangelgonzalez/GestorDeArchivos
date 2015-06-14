@@ -26,9 +26,7 @@ namespace GestorDeArchivos
 
         private void Nuevo_Load(object sender, EventArgs e)
         {
-            var path = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "FILESERVER");
-            
-            TreeNode rootnode = new TreeNode(path);
+            var rootnode = new TreeNode(Program.DirFileServer);
 
             fServer.Nodes.Add(rootnode);
             FillChildNodes(rootnode);
@@ -44,16 +42,14 @@ namespace GestorDeArchivos
         {
             try
             {
-                DirectoryInfo currentDir = new DirectoryInfo(node.FullPath);
-
-
+                var currentDir = new DirectoryInfo(node.FullPath);
 
                 foreach (DirectoryInfo dir in currentDir.GetDirectories())
                 {
-                    TreeNode newnode = new TreeNode(dir.Name);
+                    var newnode = new TreeNode(dir.Name);
                     node.Nodes.Add(newnode);
 
-                    List<FileInfo> files = new List<FileInfo>();
+                    var files = new List<FileInfo>();
                     files.AddRange(dir.GetFiles("*.txt"));
                     files.AddRange(dir.GetFiles("*.docx"));
                     files.AddRange(dir.GetFiles("*.jpg"));
@@ -62,14 +58,11 @@ namespace GestorDeArchivos
 
                     foreach (FileInfo file in files)
                     {
-                        TreeNode child = new TreeNode(file.Name);
+                        var child = new TreeNode(file.Name);
                         child.Tag = file; // save full path for later use
                         newnode.Nodes.Add(child);
                     }
-                  
                 }
-              
-                
             }
             catch (Exception ex)
             {
@@ -95,22 +88,44 @@ namespace GestorDeArchivos
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            //TOOD para ale hcaer validaciones
+            //TOOD para ale hacer validaciones
 
-            using (var uow = new UnitOfWork())
+            try
             {
-                var arch = new Archivo
-                {
-                    Nombre = txtNombre.Text,
-                    Desc = txtDesc.Text,
-                    Estado = "Pendiente de Aprobacion",
-                    Tipo = ((KeyValuePair<string, DateTime>)comboBox1.SelectedItem).Key,
-                    Vigencia = string.IsNullOrEmpty(txtNuevaVigencia.Text) ? txtVigencia.Text : txtNuevaVigencia.Text
-                };
+                var selectedNode = fServer.SelectedNode;
+                var fileInfo = new FileInfo(selectedNode.FullPath);
+                var tipo = ((KeyValuePair<string, DateTime>) comboBox1.SelectedItem).Key;
 
-                uow.Session.Store(arch, Guid.NewGuid().ToString());
-                uow.Session.SaveChanges();
+                File.Copy(selectedNode.FullPath, Path.Combine(Program.DirGestor, tipo, string.Concat(txtNombre.Text, fileInfo.Extension)));
+            
+                using (var uow = new UnitOfWork())
+                {
+                    var arch = new Archivo
+                    {
+                        Nombre = txtNombre.Text,
+                        Desc = txtDesc.Text,
+                        Estado = "Pendiente de Aprobacion",
+                        Tipo = tipo,
+                        Vigencia = string.IsNullOrEmpty(txtNuevaVigencia.Text) ? txtVigencia.Text : txtNuevaVigencia.Text
+                    };
+
+                    uow.Session.Store(arch, Guid.NewGuid().ToString());
+                    uow.Session.SaveChanges();
+                }
+
+                var res = MessageBox.Show("El archivo fue cargado con exito!", "Alert", MessageBoxButtons.OK);
+
+                if (res == DialogResult.OK)
+                {
+                    this.Close();
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado", "Alert", MessageBoxButtons.OK);    
+            }
+            
         }
     }
 

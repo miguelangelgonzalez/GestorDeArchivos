@@ -36,6 +36,7 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,11 +103,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(149, 274);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(129, 23);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar carpetas";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 314);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBaja);
             this.Controls.Add(this.btnModificar);
@@ -116,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Consulta";
             this.Text = "Consulta";
+            this.Activated += new System.EventHandler(this.Consulta_Activated);
             this.Load += new System.EventHandler(this.Consulta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnSalir;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
