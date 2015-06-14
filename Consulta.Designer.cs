@@ -116,6 +116,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Consulta";
             this.Text = "Consulta";
+            this.Load += new System.EventHandler(this.Consulta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

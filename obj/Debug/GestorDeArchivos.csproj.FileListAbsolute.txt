@@ -10,3 +10,9 @@ c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArc
 c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Consulta.resources
 c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Detalle.resources
 c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Nuevo.resources
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Abstractions.dll
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Client.Lightweight.dll
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Abstractions.pdb
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Abstractions.xml
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Client.Lightweight.pdb
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\Raven.Client.Lightweight.xml
