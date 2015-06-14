@@ -6,6 +6,13 @@ using System.Windows.Forms;
 
 namespace GestorDeArchivos
 {
+    class Usuario
+    {
+        public string Nombre { get; set; }
+        public string Clave { get; set; }
+    }
+
+
     static class Program
     {
 
@@ -28,6 +35,9 @@ namespace GestorDeArchivos
             get { return string.Concat(AppDomain.CurrentDomain.BaseDirectory, "FILESERVER"); }
         }
 
+        public static Usuario UsuarioActual { get; set; }
+
+        public static List<Usuario> Usuarios = new List<Usuario>();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -35,6 +45,13 @@ namespace GestorDeArchivos
         static void Main()
         {
             DocStore = new DocStore();
+
+            Usuarios = new List<Usuario>
+            {
+                new Usuario{Nombre = "consultor", Clave = "1234"},
+                new Usuario{Nombre = "respcarga", Clave = "1234"}
+            };
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

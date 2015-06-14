@@ -40,6 +40,12 @@ namespace GestorDeArchivos
 
         private void Consulta_Load(object sender, EventArgs e)
         {
+            if (Program.UsuarioActual.Nombre == "consultor")
+            {
+                btnNuevo.Enabled = false;
+                btnModificar.Enabled = false;
+                btnBaja.Enabled = false;
+            }
             ActualizarArbol();
         }
 

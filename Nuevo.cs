@@ -113,7 +113,7 @@ namespace GestorDeArchivos
                     uow.Session.SaveChanges();
                 }
 
-                var res = MessageBox.Show("El archivo fue cargado con exito!", "Alert", MessageBoxButtons.OK);
+                var res = MessageBox.Show("El archivo fue cargado con exito. Documento pendiente de aprobacion.", "Alert", MessageBoxButtons.OK);
 
                 if (res == DialogResult.OK)
                 {
