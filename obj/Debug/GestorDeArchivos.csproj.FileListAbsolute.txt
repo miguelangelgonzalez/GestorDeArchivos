@@ -1,0 +1,12 @@
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\GestorDeArchivos.exe.config
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\GestorDeArchivos.exe
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\bin\Debug\GestorDeArchivos.pdb
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.csprojResolveAssemblyReference.cache
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Login.resources
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Properties.Resources.resources
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.csproj.GenerateResource.Cache
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.exe
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.pdb
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Consulta.resources
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Detalle.resources
+c:\users\leap\documents\visual studio 2012\Projects\GestorDeArchivos\GestorDeArchivos\obj\Debug\GestorDeArchivos.Nuevo.resources
